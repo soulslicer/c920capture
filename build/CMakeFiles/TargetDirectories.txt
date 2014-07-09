@@ -1,0 +1,1 @@
+/baysensors/Raaj/c920capture/build/CMakeFiles/capture.dir

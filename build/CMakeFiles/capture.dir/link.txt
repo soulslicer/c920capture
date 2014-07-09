@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/capture.dir/capture.cpp.o  -o capture -rdynamic 

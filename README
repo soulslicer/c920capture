@@ -1,0 +1,22 @@
+Building:
+
+Ensure you have libav libraries and cmake:
+sudo apt-get install ffmpeg
+sudo apt-get install cmake
+
+mkdir build
+cd build
+cmake ..
+make
+
+Usage:
+Raw Video:
+./capture -W 320 -H 240 -f YUYV -d /dev/video0 -c 30 -p 30 -o stdout> test.yuv
+Image:
+./capture -W 320 -H 240 -f MJPEG -d /dev/video0 -c 1 -p 1 -o stdout> test.jpg
+H264 Video:
+./capture -W 1280 -H 720 -f H264 -d /dev/video0 -c 30 -p 30 -b 500000 -o stdout> test.h264
+
+Piping:
+./capture -W 1280 -H 720 -f H264 -d /dev/video0 -c 1000 -p 30 -o stdout | ffmpeg -i - -vcodec copy output.mp4
+./capture -W 1280 -H 720 -f VIDEO -d /dev/video0 -c 300 -p 30 -o stdout | ffmpeg -i - -b 500000 output.mp4
